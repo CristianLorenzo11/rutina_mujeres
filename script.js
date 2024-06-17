@@ -154,6 +154,8 @@ function actualizarTemporizador() {
       verificarLunesCompleto(); // Llamar a la función para verificar si el día está completo
       verificarMartesCompleto();
       verificarMiercolesCompleto();
+      verificarJuevesCompleto();
+      verificarViernesCompleto();
   }
   
   function mostrarAlerta() {
@@ -233,6 +235,70 @@ function verificarMartesCompleto() {
   }
 function verificarMiercolesCompleto() {
   var ejerciciosDelDia = document.querySelectorAll('#tabla-miercoles .marcado-ejercicio input[type="checkbox"]');
+  var todosCompletados = true;
+  ejerciciosDelDia.forEach(function(ejercicio) {
+      if (!ejercicio.checked) {
+          todosCompletados = false;
+          return;
+      }
+  });
+  if (todosCompletados) {
+    // Obtener la fecha actual
+    var today = new Date();
+
+    // Obtener el número del día de la semana (0 para Domingo, 1 para Lunes, ..., 6 para Sábado)
+    var dayOfWeek = today.getDay();
+
+    // Crear un array con los nombres de los días de la semana
+    var daysOfWeek = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+
+    // Obtener el nombre del día de la semana actual
+    var dayName = daysOfWeek[dayOfWeek];
+
+    // Mensaje con el día de la semana actual
+    var message = "<p>¡Felicidades !<br> Completaste todos los <br> ejercicios del día (" + dayName + ").<br> Podés volver a casa feliz.</p>";
+
+    // Mostrar overlay con el mensaje que incluye el día de la semana
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("overlay").innerHTML = message;
+    document.getElementById("alertaentreejercicio").style.display = "none"; // Ocultar la alerta
+}
+}
+
+function verificarJuevesCompleto() {
+  var ejerciciosDelDia = document.querySelectorAll('#tabla-jueves .marcado-ejercicio input[type="checkbox"]');
+  var todosCompletados = true;
+  ejerciciosDelDia.forEach(function(ejercicio) {
+      if (!ejercicio.checked) {
+          todosCompletados = false;
+          return;
+      }
+  });
+  if (todosCompletados) {
+    // Obtener la fecha actual
+    var today = new Date();
+
+    // Obtener el número del día de la semana (0 para Domingo, 1 para Lunes, ..., 6 para Sábado)
+    var dayOfWeek = today.getDay();
+
+    // Crear un array con los nombres de los días de la semana
+    var daysOfWeek = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+
+    // Obtener el nombre del día de la semana actual
+    var dayName = daysOfWeek[dayOfWeek];
+
+    // Mensaje con el día de la semana actual
+    var message = "<p>¡Felicidades !<br> Completaste todos los <br> ejercicios del día (" + dayName + ").<br> Podés volver a casa feliz.</p>";
+
+    // Mostrar overlay con el mensaje que incluye el día de la semana
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("overlay").innerHTML = message;
+    document.getElementById("alertaentreejercicio").style.display = "none"; // Ocultar la alerta
+}
+}
+
+function verificarViernesCompleto() {
+  var ejerciciosDelDia = document.querySelectorAll('#tabla-viernes .marcado-ejercicio input[type="checkbox"]');
   var todosCompletados = true;
   ejerciciosDelDia.forEach(function(ejercicio) {
       if (!ejercicio.checked) {
