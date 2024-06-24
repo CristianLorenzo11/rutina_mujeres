@@ -107,7 +107,7 @@ body {
     border-bottom:solid 1px #ccc;
 }
 .completado {
-    background-color: #407ea7; 
+    background-color: #b044d1; 
 }
   /* Estilo para el cuadro de marcado */
   .marcado-ejercicio input[type="checkbox"] {
@@ -357,17 +357,17 @@ padding-top: 10px;
 
 #temporizador {
     text-align: center;
-    color: #0ff; /* Azul claro */
+    color: #b044d1; /* Azul claro */
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     background: linear-gradient(45deg, #202020, #000); /* Degradado oscuro */
-    border: 1px solid #0ff; /* Borde azul claro */
+    border: 1px solid rgb(202, 87, 224); /* Borde azul claro */
     overflow: hidden;
 }
 
 #temporizador h2 {
-    color: #0ff; /* Azul claro */
+    color: #b044d1; /* Azul claro */
     margin-top: 0;
     font-size: 24px;
     font-weight: normal;
@@ -383,7 +383,7 @@ padding-top: 10px;
 }
 
 #temporizador button {
-    background-color: #0ff; /* Azul claro */
+    background-color: #b044d1; /* Azul claro */
     color: #000; /* Texto negro */
     border: none;
     padding: 8px 16px;
